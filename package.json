@@ -1,0 +1,76 @@
+{
+  "name": "rajawalicinema",
+  "version": "1.0.0",
+  "description": "WATCH MOVIE HD FREE SUBTITLE ENGLISH OR INDONESIA, DOWNLOAD NEWS MOVIE GRATIS, NONTON FILM ONLINE GRATIS",
+  "now": {
+    "name": "rajawalicinema",
+    "alias": "rajawalicinema"
+  },
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "nodemon -w server -w package.json server/index.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server/index.js",
+    "eslint": "sudo eslint pages/. components/. utils/."
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "antd": "^3.13.6",
+    "axios": "^0.18.0",
+    "body-parser": "^1.15.2",
+    "dotenv": "^6.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "eslint": "^5.15.0",
+    "express": "^4.16.4",
+    "glob": "^7.1.2",
+    "imdb-scrapper": "^2.2.0",
+    "isomorphic-unfetch": "^2.0.0",
+    "jsonwebtoken": "^8.5.0",
+    "less": "^3.9.0",
+    "mobx": "^5.9.0",
+    "mongoose": "^5.4.15",
+    "mongoose-crudify": "^0.2.0",
+    "next": "^8.0.3",
+    "path": "^0.12.7",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-jw-player": "^1.19.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-mobx": "^1.0.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "nodemon": "^1.18.4",
+    "pre-commit": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ade1256/rajawalicinema.git"
+  },
+  "keywords": [
+    "watch-movie-online",
+    "cinema",
+    "indo",
+    "indoxxi",
+    "subtitle",
+    "indonesia",
+    "download",
+    "movie",
+    "free"
+  ],
+  "author": "Ade Prasetyo",
+  "bugs": {
+    "url": "https://github.com/ade1256/rajawalicinema/issues"
+  },
+  "homepage": "https://github.com/ade1256/rajawalicinema#readme"
+}
