@@ -1,12 +1,120 @@
-input{
-	padding: 8px;
-    border-radius: 2px;
-    border: 1px solid #888;
+
+body{
+    color: #C1BDEE;
+    font-family: 'Open Sans';
+    font-size: 14px;
 }
-button{
-    padding: 8px;
-    background: #4881e8;
-    border: 1px solid #4881e8;
-    color: #fff;
+.ant-breadcrumb{
+    span{
+        color: #C1BDEE;
+    }
+}
+.ant-layout-sider{
+    background: #222240;
+    height: 100vh;
+}
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub{
+    background: #222240;
+}
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
+    background-color: rgba(193, 189, 238, 0.05);
+}
+.ant-layout-sider-trigger{
+    background-color: rgba(193, 189, 238, 0.05);
+}
+.ant-layout{
+    background: radial-gradient(639.94px at 36.35% 87.77%, #222240 0%, #2D2051 100%);
+}
+.ant-layout-header,.ant-layout-content,.ant-layout-footer{
+    background: none;
+    padding: 0;
+    padding-left: 24px;
+}
+.ant-input-search{
+    .ant-input,.ant-input:focus{
+        background: none;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        border-bottom: 1px solid #C1BDEE;
+        padding: 0;
+    }
+    .ant-input-search-icon{
+        color: #C1BDEE;
+        svg{
+            width: 18px;
+            height: 18px;
+        }
+    }
+    input{
+        color: #fff;
+        
+    }
+    .ant-input-suffix {
+        right: 0;
+    }
+}
+
+.card-movie{
+    position: relative;
+    width: 100%;
+    background: rgba(193, 189, 238, 0.05);
+    height: 222px;
     border-radius: 2px;
+    padding: 11px;
+    margin-bottom: 24px;
+    .title{
+        position: absolute;
+        color: #fff;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 8px;
+    }
+    .thumbnail{
+        border-radius: 2px;
+        height: 100%;
+        padding: 5px 8px;
+    }
+    .rating{
+        position: relative;
+        color: #fff;
+        font-family: 'Open Sans',sans-serif;
+        float: left;
+        font-size: 12px;
+        margin-right: 3px;
+        .star{
+            padding-right: 2px;
+            float: left;
+        }
+    }
+    .duration{
+        position: relative;
+        color: #fff;
+        font-family: 'Open Sans',sans-serif;
+        float: left;
+        font-size: 12px;
+        margin-right: 2px;
+        .time{
+            padding-right: 2px;
+            float: left;
+        }
+    }
+    .label-blu{
+        width: 33px;
+        height: 18px;
+        background: #2F80ED;
+        position: relative;
+        float: right;
+        border-radius: 2px;
+        text-align: center;
+        color: #fff;
+        padding-bottom: 10px;
+    }
 }

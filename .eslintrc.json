@@ -1,0 +1,51 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "airbnb",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": [ 2 ],
+    "space-in-parens": [ 0, "always" ],
+    "template-curly-spacing": [ 2, "always" ],
+    "array-bracket-spacing": [ 2, "always" ],
+    "object-curly-spacing": [ 2, "always" ],
+    "computed-property-spacing": [ 2, "always" ],
+    "no-multiple-empty-lines": [ 1, { "max": 1, "maxEOF": 0, "maxBOF": 0 } ],
+    "quotes": [ 2, "single", "avoid-escape" ],
+    "prefer-const": 1,
+    "react/prefer-es6-class": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-curly-spacing": [ 2, "always" ],
+    "react/jsx-indent": [ 2 ],
+    "react/prop-types": 0,
+    "semi": 2,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "no-use-before-define": ["error", { "variables": false }],
+    "import/no-unresolved": [2, { "ignore": [".png$", ".webp$", ".jpg$", ".json$"] }],
+    "radix": 0,
+    "no-plusplus": 0,
+    "class-methods-use-this": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "no-alert":"off",
+    "no-underscore-dangle":"off",
+    "react/no-array-index-key":"off",
+    "no-param-reassign":"off",
+    "react/destructuring-assignment": "off",
+    "max-len":"off"
+    }
+}

@@ -17,6 +17,18 @@ module.exports = withCss(withLess({
         systemvars: true,
       }),
     ];
+
+    config.module.rules.push(
+      {
+        test: /\.less$/,
+        use: [{
+          loader: 'less-loader', // compiles Less to CSS
+          options: {
+            javascriptEnabled: true,
+          },
+        }],
+      },
+    );
     
     return config
   }

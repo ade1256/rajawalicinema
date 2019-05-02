@@ -36,6 +36,27 @@ app.prepare().then(() => {
 	const rootPath = require('path').normalize(__dirname + '/..');
 	glob.sync(rootPath + '/server/routes/*.js').forEach(controllerPath => require(controllerPath)(server));
 
+	server.get('/nonton-film-indoxxi-terbaru', (req, res) => {
+		const actualPage = '/home';
+		const queryParams = {
+			title: "Nonton film indoxxi terbaru",
+			playUrl: "/nonton-film-indoxxi-terbaru/"
+		} ;
+		app.render(req, res, actualPage, queryParams);
+	  });
+
+	server.get('/nonton-film-indoxxi-terbaru/:urlSlug', (req, res) => {
+	  const actualPage = '/movie';
+	  const queryParams = { urlSlug: req.params.urlSlug } ;
+	  app.render(req, res, actualPage, queryParams);
+	});
+
+	server.get('/movie/:urlSlug', (req, res) => {
+		const actualPage = '/movie';
+		const queryParams = { urlSlug: req.params.urlSlug } ;
+		app.render(req, res, actualPage, queryParams);
+	  });
+
 	// Next.js route
 	server.get('*', (req, res) => {
 		return handle(req, res)
