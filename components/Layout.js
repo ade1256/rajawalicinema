@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
 import {
-  Layout, Menu, Breadcrumb, Icon, Input, Row,
+  Layout, Menu, Icon, Input, Row,
 } from 'antd';
 import 'antd/dist/antd.css';
 import '../static/style.less';
@@ -103,9 +103,6 @@ class BaseLayout extends Component {
               />
             </Header>
             <Content>
-              <Breadcrumb style={ { margin: '16px 0' } }>
-                <Breadcrumb.Item>Home /</Breadcrumb.Item>
-              </Breadcrumb>
               <div style={ { padding: 24, background: 'none', minHeight: 360 } }>
                 {this.props.children}
               </div>

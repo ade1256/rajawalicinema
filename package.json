@@ -37,7 +37,6 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-jw-player": "^1.19.0",
-    "react-jw-player2": "^1.0.5",
     "redux": "^4.0.1",
     "yoastseo": "^1.51.0"
   },
