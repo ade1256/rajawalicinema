@@ -1,9 +1,5 @@
 import fetch from 'isomorphic-unfetch';
-import Head from 'next/head';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactJWPlayer from 'react-jw-player';
-import { version, Button } from 'antd';
 import 'antd/dist/antd.css';
 
 const axios = require('axios');
@@ -39,7 +35,7 @@ class IndexPage extends React.Component {
   async componentDidMount() {
     await this.getConfig();
     await this.getSource();
-    console.log(this.state.dataFilm)
+    console.log(this.state.dataFilm);
   }
 
   async getConfig() {
@@ -97,11 +93,12 @@ class IndexPage extends React.Component {
   render() {
     return (
       <div>
-        <ReactJWPlayer
+        {/* <ReactJWPlayer
           playerId={this.state.playerId}
           playerScript={this.state.playerJs}
           playlist={this.state.dataFilm}
-        />
+        /> */}
+       
       </div>
     );
   }

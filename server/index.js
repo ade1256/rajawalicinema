@@ -57,6 +57,11 @@ app.prepare().then(() => {
 		app.render(req, res, actualPage, queryParams);
 	  });
 
+	  server.get('/', (req, res) => {
+		const actualPage = '/home';
+		app.render(req, res, actualPage);
+	  });
+
 	// Next.js route
 	server.get('*', (req, res) => {
 		return handle(req, res)

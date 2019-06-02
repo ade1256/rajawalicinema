@@ -103,7 +103,7 @@ class BaseLayout extends Component {
               />
             </Header>
             <Content>
-              <div style={ { padding: 24, background: 'none', minHeight: 360 } }>
+              <div style={ { paddingRight: 24, background: 'none', minHeight: 360 } }>
                 {this.props.children}
               </div>
             </Content>

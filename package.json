@@ -23,7 +23,6 @@
     "dotenv-webpack": "^1.7.0",
     "express": "^4.16.4",
     "glob": "^7.1.2",
-    "imdb-scrapper": "^2.2.0",
     "isomorphic-unfetch": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
     "less": "^3.9.0",
@@ -37,6 +36,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-jw-player": "^1.19.0",
+    "react-player": "^1.11.0",
     "redux": "^4.0.1",
     "yoastseo": "^1.51.0"
   },

@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 const Categorie = require('./categorie');
 const Countrie = require('./countrie');
 const Genre = require('./genre');
+const Creator = require('./creator');
 
 var Schema = mongoose.Schema;
 
@@ -22,6 +23,11 @@ var movieSchema = new Schema({
     countrieId: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: Countrie,
+        default: null,
+    }],
+    creatorId: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: Creator,
         default: null,
     }],
 }, {

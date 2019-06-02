@@ -1,4 +1,14 @@
-
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/static/fonts/OpenSans-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('/static/fonts/OpenSans-Regular.ttf');
+    font-weight: 700;
+}
+h1,h2,h3,h4,h5,h6,p,a,b,i{margin: 0;padding: 0;}
 body{
     color: #C1BDEE;
     font-family: 'Open Sans';
@@ -106,15 +116,173 @@ body{
             float: left;
         }
     }
-    .label-blu{
-        width: 33px;
-        height: 18px;
-        background: #2F80ED;
+    .label{
         position: relative;
-        float: right;
-        border-radius: 2px;
-        text-align: center;
-        color: #fff;
-        padding-bottom: 10px;
+        &-blu{
+            width: 33px;
+            height: 23px;
+            float: right;
+            border-radius: 2px;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 10px;
+            background: #2F80ED;
+        }
+        &-hd{
+            width: 33px;
+            height: 23px;
+            float: right;
+            border-radius: 2px;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 10px;
+            background: #27AE60;
+        }
+        &-cam{
+            width: 33px;
+            height: 23px;
+            float: right;
+            border-radius: 2px;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 10px;
+            background: #EB5757;
+        }
     }
+}
+
+.jwplayer.jw-flag-aspect-mode{
+    height: 400px!important;
+}
+
+.backgroundPlayer::before{
+    position: relative;
+    content: '';
+    height: 400px;
+    width: 100%;
+    background-color: rgba(193, 189, 238, 0.5);
+    display: block;
+}
+.backgroundPlayer{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    
+}
+
+.buttonPlay{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    color: #C1BDEE;
+    top: 25%;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    text-align: center;
+    :hover{
+        color: #F2C94C;
+    }
+}
+
+.buttonServer{
+    background: rgba(193, 189, 238, 0.05);
+    color: #C1BDEE;
+    border: none;
+    font-size: 14px;
+    font-family: 'Open Sans',sans-serif;
+    padding: 15px 33px;
+    border-radius: 2px;
+    height: auto;
+    width: 100%;
+    &:hover,&:focus{
+        color: #4CE8F2;
+        background-color: rgba(193, 189, 238, 0.05);
+    }
+}
+
+.buttonAddons{
+    .buttonServer;
+    width: 100%;
+}
+
+// Information Movie
+#sectionInformation{
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 56px;
+    h1{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 24px;
+        color: #C1BDEE;
+    }
+    .rating{
+        .card-movie.rating;
+    }
+    .duration{
+        .card-movie.duration;
+    }
+    .label{
+        position: relative;
+        &-blu{
+            width: 33px;
+            height: 23px;
+            float: left;
+            border-radius: 2px;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 10px;
+            background: #2F80ED;
+        }
+        &-hd{
+            width: 33px;
+            height: 23px;
+            float: left;
+            border-radius: 2px;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 10px;
+            background: #27AE60;
+        }
+        &-cam{
+            width: 33px;
+            height: 23px;
+            float: left;
+            border-radius: 2px;
+            text-align: center;
+            color: #fff;
+            padding-bottom: 10px;
+            background: #EB5757;
+        }
+    }
+    .description{
+        position: relative;
+        display: inline;
+        p{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            line-height: 36px;
+            color: #C1BDEE;
+            padding-bottom: 24px;
+        }
+    }
+    .thumbnail{
+        height: 338px;
+        img{
+            width: inherit;
+            height: inherit;
+        }
+    }
+    .details{
+        font-family: 'Open Sans Bold',sans-serif;
+        font-size: 18px;
+        line-height: 48px;
+    }
+}
+hr{
+    position: relative;
+    margin: 24px 0px;
+    border: 1px solid #2B2B48;
 }

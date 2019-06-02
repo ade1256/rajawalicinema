@@ -22,6 +22,7 @@ module.exports = function (server, router) {
         .populate('categorieId')
         .populate('genreId')
         .populate('countrieId')
+        .populate('creatorId')
           .exec(function (err, movies) {
             if (err) return next(err);
             res.json(movies);
@@ -33,6 +34,7 @@ module.exports = function (server, router) {
         .populate('categorieId')
         .populate('genreId')
         .populate('countrieId')
+        .populate('creatorId')
           .exec(function (err, movies) {
             if (err) return next(err);
 						res.json(movies);
