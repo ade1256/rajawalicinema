@@ -9,12 +9,27 @@ var Schema = mongoose.Schema;
 
 var movieSchema = new Schema({
     title: { type: String, required: true },
-    tagline: { type: String, required: false },
-    categorieId: {
+    release: { type: Date, required: false },
+    rating : { type: Number,default: null, },
+    duration : { type: Number,default: null, },
+    quality: { type: String,default: null, },
+    thumbnail: { type: String,default: null, },
+    tagline: { type: String, required: false,default: null, },
+    description: {type: String,default: null,},
+    plot: {type: String,default: null,},
+    storyline: {type: String,default: null,},
+    director: {type: String,default: null,},
+    urlSlug: {type: String,default: null,},
+    keywords: [{type: String,default: null,}],
+    server: {
+        type: Object,
+        default: null,
+    },
+    categorieId: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: Categorie,
         default: null,
-    },
+    }],
     genreId: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: Genre,

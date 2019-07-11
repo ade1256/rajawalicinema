@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
-import Router from 'next/router';
 import {
   Layout, Menu, Icon, Input, Row,
 } from 'antd';
@@ -34,7 +33,7 @@ const SearchIcon = props => (
   <Icon component={ SearchSvg } { ...props } />
 );
 
-class BaseLayout extends Component {
+class BaseLayoutAdmin extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,15 +41,27 @@ class BaseLayout extends Component {
       token: '',
     };
   }
-
-  handleMenuClick(e) {
-    if (e.key === 'discover') {
-      Router.replace('/home');
-    } else if (e.key === 'profile') {
-      Router.push('/profile');
-    }
-  }
  
+
+  componentDidMount() {
+    this.getToken();
+  }
+
+  async getToken() {
+    const response = await axios.post('/login', {
+      username: 'ade1256',
+      password: 'ade12561256'
+    });
+    this.setState({
+      token: response.data.token
+    });
+    return this.state.token;
+  }
+
+  onCollapse = (collapsed) => {
+    this.setState({ collapsed });
+  }
+
   render() {
     return (
       <div>
@@ -67,28 +78,35 @@ class BaseLayout extends Component {
             onCollapse={ this.onCollapse }
           >
             <div className="logo" />
-            <Menu theme="dark" defaultSelectedKeys={ [ this.props.menuActive ] } mode="inline" onClick={ e => this.handleMenuClick(e) }>
-              <Menu.Item key="discover">
-                <CompassIcon />
-                <span>Discover</span>
+            <Menu theme="dark" defaultSelectedKeys={ [ this.props.menuActive ] } mode="inline">
+              <Menu.Item key="listMovie">
+                <Icon type="home" />
+                <span>List Movie</span>
               </Menu.Item>
-              <Menu.Item key="2">
-                <Icon type="desktop" />
-                <span>Option 2</span>
+              <Menu.Item key="movies">
+              <Icon type="database" />
+                <span>Movies</span>
               </Menu.Item>
-              <Menu.Item key="9">
-                <Icon type="file" />
-                <span>File</span>
+              <Menu.Item key="categories">
+                <Icon type="database" />
+                <span>Categories</span>
+              </Menu.Item>
+              <Menu.Item key="countries">
+                <Icon type="database" />
+                <span>Countries</span>
+              </Menu.Item>  
+              <Menu.Item key="creators">
+                <Icon type="database" />
+                <span>Creators</span>
+              </Menu.Item>
+              <Menu.Item key="genres">
+                <Icon type="database" />
+                <span>Genres</span>
               </Menu.Item>
             </Menu>
           </Sider>
             <Layout>
             <Header>
-              <Search
-                placeholder="Search movie, artist, or album"
-                onSearch={ value => console.log(value) }
-                style={ { width: 200 } }
-              />
             </Header>
             <Content>
               <div style={ { paddingRight: 24, background: 'none', minHeight: 360 } }>
@@ -106,5 +124,5 @@ class BaseLayout extends Component {
   }
 }
 
-export default BaseLayout;
+export default BaseLayoutAdmin;
 

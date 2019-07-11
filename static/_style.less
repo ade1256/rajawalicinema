@@ -167,7 +167,7 @@ body{
     position: relative;
     width: 100%;
     height: 400px;
-    
+    z-index: 99;
 }
 
 .buttonPlay{
@@ -200,11 +200,14 @@ body{
         background-color: rgba(193, 189, 238, 0.05);
     }
 }
-
-.buttonAddons{
-    .buttonServer;
-    width: 100%;
+.buttonSetting{
+    .buttonAddons{
+        z-index: 999999;
+        .buttonServer;
+        width: 100%;
+    }
 }
+
 
 // Information Movie
 #sectionInformation{
@@ -285,4 +288,62 @@ hr{
     position: relative;
     margin: 24px 0px;
     border: 1px solid #2B2B48;
+}
+
+// Table
+.ant-table{
+    color: #fff;
+}
+.ant-table-thead > tr {
+    background: @sub-primary;
+}
+.ant-table-thead > tr > th{
+    color: #fff;
+}
+.ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+    background: rgba(193, 189, 238, 0.34);
+}
+.ant-table-row-expand-icon{
+    background: @sub-primary;
+}
+tr.ant-table-expanded-row, tr.ant-table-expanded-row:hover{
+    background: @sub-primary;
+}
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link{
+    background: @sub-primary;
+}
+.ant-pagination-disabled a, .ant-pagination-disabled:hover a, .ant-pagination-disabled:focus a, .ant-pagination-disabled .ant-pagination-item-link, .ant-pagination-disabled:hover .ant-pagination-item-link, .ant-pagination-disabled:focus .ant-pagination-item-link{
+    color: #fff;
+}
+
+.ant-pagination-item-active{
+    background: @third-primary;
+    border:1px solid #fff;
+    &:hover{
+        border:1px solid #fff;
+    }
+}
+
+.ant-pagination-item-active a{
+    color: #fff;
+    &:hover{
+        color: #fff;
+    }
+}
+
+// lightOn
+.lightOnOff{
+    position: fixed;
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9; 
+}
+
+.on{
+    display: block;
+}
+.off{
+    display: none;
 }
