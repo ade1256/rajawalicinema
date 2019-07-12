@@ -5,7 +5,7 @@ import { Row, Col, Breadcrumb, Button, Icon } from 'antd';
 import ReactJWPlayer from 'react-jw-player';
 import Layout from '../components/Layout';
 import axios from 'axios';
-import {IconPlay,StarIcon,TimeIcon} from './icon';
+import {WatchLaterIcon,LampIcon,CautionIcon,IconPlay,StarIcon,TimeIcon,DownloadMp4,DownloadSrt} from './icon';
 
 let genreList = [];
 let creatorList = [];
@@ -15,6 +15,7 @@ class movie extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            url: 'https://invfest.com/ade',
             token: '',
             dataMovie: [],
             dataServer: [],
@@ -160,7 +161,7 @@ class movie extends Component {
         console.log("Memutar server google ...")
         const {playServer}=this.state;
        return(
-        <iframe style={ { width: '100%', height: '400px', position: 'absolute', top: 0 } } scrolling="no" src={playServer} frameBorder="0" allowFullScreen={true}></iframe>
+        <iframe style={ { width: '100%', height: '400px', position: 'absolute', top: 0 } } scrolling="no" src={this.state.url+playServer} frameBorder="0" allowFullScreen={true}></iframe>
        );
       }
 
@@ -285,23 +286,21 @@ class movie extends Component {
                   </Row>
                  <Row className="buttonSetting" style={ {marginTop: '16px'} } gutter={24} type="flex" justify="center">
                   <Col xs={24} sm={24} md={4}>
-                    <Button className="buttonAddons">Lapor Error</Button>
+                    <Button className="buttonAddons"><CautionIcon/>Lapor Error</Button>
                   </Col>
                   <Col xs={24} sm={24} md={4}>
-                    <Button className="buttonAddons" onClick={() => this.lightOnOff()}>Light On / Off</Button>
+                    <Button className="buttonAddons" onClick={() => this.lightOnOff()}><LampIcon/>Light On / Off</Button>
                   </Col>
                   <Col xs={24} sm={24} md={4}>
-                    <Button className="buttonAddons">Movie .mp4</Button>
+                    <Button className="buttonAddons" onClick={() => window.open(this.state.url+this.state.dataMovie.download, '_blank')}><DownloadMp4/>Movie .mp4</Button>
                   </Col>
                   <Col xs={24} sm={24} md={4}>
-                    <Button className="buttonAddons">Subtitle .srt</Button>
+                    <Button className="buttonAddons" onClick={() => window.location = this.state.url+this.state.dataMovie.subtitle} ><DownloadSrt/>Subtitle .srt</Button>
                   </Col>
                   <Col xs={24} sm={24} md={4}>
-                    <Button className="buttonAddons">Watch Later</Button>
+                    <Button className="buttonAddons"><WatchLaterIcon/>Watch Later</Button>
                   </Col>
-                  <Col xs={24} sm={24} md={4}>
-                    <Button className="buttonAddons">Fullscreen</Button>
-                  </Col>
+                  
                  </Row>
                   
                   <Row>
