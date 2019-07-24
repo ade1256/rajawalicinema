@@ -11,8 +11,7 @@ module.exports = function (server, router) {
 			Model: Movie,
 			beforeActions: [
 				{
-					middlewares: [methods.ensureToken],
-					except:['list']
+					middlewares: [methods.ensureToken]
 				}
 			  ],
 		})

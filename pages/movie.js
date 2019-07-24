@@ -15,7 +15,7 @@ class movie extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            url: 'https://invfest.com/ade',
+            url: 'http://localhost',
             token: '',
             dataMovie: [],
             dataServer: [],
@@ -161,7 +161,7 @@ class movie extends Component {
         console.log("Memutar server google ...")
         const {playServer}=this.state;
        return(
-        <iframe style={ { width: '100%', height: '400px', position: 'absolute', top: 0 } } scrolling="no" src={this.state.url+playServer} frameBorder="0" allowFullScreen={true}></iframe>
+        <iframe style={ { width: '100%', height: '400px', position: 'absolute', top: 0 } } scrolling="no" src={this.state.url+'/video/'+playServer} frameBorder="0" allowFullScreen={true}></iframe>
        );
       }
 
@@ -184,7 +184,7 @@ class movie extends Component {
                     <span className="time">
                       <TimeIcon />
                     </span>
-                    {duration} m
+                    {moment.duration(duration, 's').asMinutes()+" m"}
                   </div>
                     {quality === 'BLU' ? <div className="label-blu">BLU</div>:''}
                     {quality === 'HD' ? <div className="label-hd">HD</div>:''}
@@ -292,7 +292,7 @@ class movie extends Component {
                     <Button className="buttonAddons" onClick={() => this.lightOnOff()}><LampIcon/>Light On / Off</Button>
                   </Col>
                   <Col xs={24} sm={24} md={4}>
-                    <Button className="buttonAddons" onClick={() => window.open(this.state.url+this.state.dataMovie.download, '_blank')}><DownloadMp4/>Movie .mp4</Button>
+                    <Button className="buttonAddons" onClick={() => window.open(this.state.url+'/download/'+ this.state.playServer, '_blank')}><DownloadMp4/>Movie .mp4</Button>
                   </Col>
                   <Col xs={24} sm={24} md={4}>
                     <Button className="buttonAddons" onClick={() => window.location = this.state.url+this.state.dataMovie.subtitle} ><DownloadSrt/>Subtitle .srt</Button>

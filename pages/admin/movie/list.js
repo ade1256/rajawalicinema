@@ -1,38 +1,21 @@
 import React, { Component } from 'react';
-import { withRouter } from 'next/router';
+import Router, { withRouter } from 'next/router';
 import Link from 'next/link'
 import moment from 'moment';
 import {
   Row, Col, Icon, Button, Table
 } from 'antd';
-import Layout from '../../components/LayoutAdmin';
-import {IconPlay,StarIcon,TimeIcon} from '../icon';
+import Layout from '../../../components/LayoutAdmin';
+import {IconPlay,StarIcon,TimeIcon} from '../../icon';
 
 const axios = require('axios');
-let genreList = [];
-let creatorList = [];
-let countrieList = [];
-let keywordList = [];
+
 class adminHome extends Component {
   constructor(props) {
     super(props);
     this.state = {
       token: '',
       dataMovie: [],
-      dataExample: [
-        {
-          key: '1',
-          name: 'John Brown',
-          age: 32,
-          address: 'New York Park',
-        },
-        {
-          key: '2',
-          name: 'Jim Green',
-          age: 40,
-          address: 'London Park',
-        },
-      ],
       url: this.props.router.query.playUrl ? this.props.router.query.playUrl : '/movie/',
     };
   }
@@ -64,17 +47,8 @@ class adminHome extends Component {
     });
   }
 
-  async getIMDB() {
-    const response = await axios.get('http://localhost:3000/title/tt0437086/', {
-      headers: {
-        Authorization: `Bearer ${ this.state.token }`,
-      },
-    });
-    console.log("Data IMDB",  response.data);
-  }
-
   sectionInformation(record){
-    const { title, release, rating, duration, quality, thumbnail, tagline, description, plot, storyline, director } = record;
+    const { title, release, rating, duration, quality, thumbnail, tagline, description, plot, storyline, director, genreId, creatorId, countrieId, keywords } = record;
     
     return (
       <div id="sectionInformation">
@@ -116,12 +90,12 @@ class adminHome extends Component {
               <tr>
                 <td>Genre</td>
                 <td>:</td>
-                <td>{ genreList.map(genre=>{return (genre.name+', ')}) }</td>
+                <td>{ genreId.map(genre=>{return (genre.name+', ')}) }</td>
               </tr>
               <tr>
                 <td>Creators</td>
                 <td>:</td>
-                <td>{ creatorList.map(data=>{return (data.name+', ')}) }</td>
+                <td>{ creatorId.map(data=>{return (data.name+', ')}) }</td>
               </tr>
               <tr>
                 <td>Release Date</td>
@@ -131,7 +105,7 @@ class adminHome extends Component {
               <tr>
                 <td>Production Countries</td>
                 <td>:</td>
-                <td>{ countrieList.map(data=>{return (data.name+', ')}) }</td>
+                <td>{ countrieId.map(data=>{return (data.name+', ')}) }</td>
               </tr>
               <tr>
                 <td>Director</td>
@@ -141,7 +115,7 @@ class adminHome extends Component {
               <tr>
                 <td>Keywords</td>
                 <td>:</td>
-                <td>{ keywordList.map(data=>{return (data+', ')}) }</td>
+                <td>{ keywords.map(data=>{return (data+', ')}) }</td>
               </tr>
               
               </tbody>
@@ -152,6 +126,10 @@ class adminHome extends Component {
     );
   }
 
+  linkAdd(){
+    Router.replace('/admin/movie/add');
+  }
+
   render() {
     return (
       <div>
@@ -159,10 +137,16 @@ class adminHome extends Component {
           <Col span={ 24 }>
             <Layout title={ 'List Movie - Admin Kebonfilm' } menuActive="listMovie">
               <Row gutter={ 24 }>
+                <Col span={ 24 }>
+                  <Button onClick={ e => this.linkAdd() }>Add</Button>
+                </Col>
+              </Row>
+              <Row gutter={ 24 }>
               <Table
                 columns={columns}
                 expandedRowRender={record => this.sectionInformation(record)}
                 dataSource={this.state.dataMovie}
+                rowKey={record => record._id}
               />
               </Row>
             </Layout>
@@ -208,7 +192,14 @@ const columns = [
     title: 'Action',
     dataIndex: '',
     key: 'x',
-    render: () => <a href="javascript:;">Delete</a>,
+    render: () => {
+      return (
+        <div>
+          <a href="javascript:;">Edit</a>
+          <a href="javascript:;">Delete</a>
+        </div>
+      );
+    },
   },
 ];
 

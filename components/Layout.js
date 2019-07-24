@@ -43,6 +43,10 @@ class BaseLayout extends Component {
     };
   }
 
+  onCollapse = (collapsed) => {
+    this.setState({ collapsed });
+  }
+
   handleMenuClick(e) {
     if (e.key === 'discover') {
       Router.replace('/home');

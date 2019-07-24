@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Head from 'next/head';
+import Router from 'next/router';
 import {
   Layout, Menu, Icon, Input, Row,
 } from 'antd';
@@ -41,25 +42,17 @@ class BaseLayoutAdmin extends Component {
       token: '',
     };
   }
- 
-
-  componentDidMount() {
-    this.getToken();
-  }
-
-  async getToken() {
-    const response = await axios.post('/login', {
-      username: 'ade1256',
-      password: 'ade12561256'
-    });
-    this.setState({
-      token: response.data.token
-    });
-    return this.state.token;
-  }
 
   onCollapse = (collapsed) => {
     this.setState({ collapsed });
+  }
+
+  handleMenuClick(e) {
+    if (e.key === 'listMovie') {
+      Router.replace('/admin');
+    } else if (e.key === 'categories') {
+      Router.push('/admin/categories');
+    }
   }
 
   render() {
@@ -78,14 +71,10 @@ class BaseLayoutAdmin extends Component {
             onCollapse={ this.onCollapse }
           >
             <div className="logo" />
-            <Menu theme="dark" defaultSelectedKeys={ [ this.props.menuActive ] } mode="inline">
+            <Menu theme="dark" defaultSelectedKeys={ [ this.props.menuActive ] } mode="inline" onClick={e => this.handleMenuClick(e)}>
               <Menu.Item key="listMovie">
                 <Icon type="home" />
                 <span>List Movie</span>
-              </Menu.Item>
-              <Menu.Item key="movies">
-              <Icon type="database" />
-                <span>Movies</span>
               </Menu.Item>
               <Menu.Item key="categories">
                 <Icon type="database" />

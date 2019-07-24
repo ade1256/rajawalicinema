@@ -7,6 +7,7 @@ const Request = axios.create({
     Authorization: process.env.BEARER,
     Accept: 'application/json',
     'Content-Type': 'application/json',
+    'X-Frame-Options': 'ALLOW-FROM http://localhost/video/wKNadcn5mUqgiAM/',
   },
 });
 

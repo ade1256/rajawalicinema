@@ -65,8 +65,7 @@ class home extends Component {
                 <span className="time">
                   <TimeIcon />
                 </span>
-                {data.duration}
-m
+                {moment.duration(data.duration, 's').asMinutes()+" m"}
               </div>
               <div>
                 {data.quality === 'BLU' ? <div className="label-blu">BLU</div>:''}
