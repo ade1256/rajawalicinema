@@ -30,7 +30,7 @@
     "moment": "^2.24.0",
     "mongoose": "^5.5.5",
     "mongoose-crudify": "^0.2.0",
-    "next": "^8.1.0",
+    "next": "^9.3.2",
     "next-seo": "^1.11.2",
     "path": "^0.12.7",
     "react": "^16.8.6",
