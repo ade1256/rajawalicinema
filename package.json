@@ -27,7 +27,7 @@
     "jsonwebtoken": "^8.5.1",
     "less": "^3.9.0",
     "mobx": "^5.9.4",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.5.5",
     "mongoose-crudify": "^0.2.0",
     "next": "^8.1.0",
