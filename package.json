@@ -24,7 +24,7 @@
     "express": "^4.16.4",
     "glob": "^7.1.2",
     "isomorphic-unfetch": "^2.0.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "less": "^3.9.0",
     "mobx": "^5.9.4",
     "moment": "^2.24.0",
